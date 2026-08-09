@@ -1,14 +1,24 @@
+import {
+  getAllProducts as getAllProductsService,
+  getProductById as getProductByIdService,
+  addProduct,
+} from "../services/productService.js";
+
 const getAllProducts = (req, res) => {
-    res.send("Fetching all products.");
-}
+  const result = getAllProductsService();
+  res.send(result);
+};
 
 const getProductById = (req, res) => {
-    const productId = req.params.id;
-    res.send(`Fetching product with ID: ${productId}`);
-}
+  const productId = req.params.id;
 
-const addProduct = (req, res) => {
-    res.send("Adding a new product.");
-}
+  const result = getProductByIdService(productId);
+  res.send(result);
+};
 
-export { getAllProducts, getProductById, addProduct };
+const createProduct = (req, res) => {
+  const result = addProduct(req.body);
+  res.send(result);
+};
+
+export { getAllProducts, getProductById, createProduct };

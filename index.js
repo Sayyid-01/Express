@@ -13,9 +13,9 @@ app.get("/", (req, res) => {
     res.send("Welcome to the E-Commerce API");
 });
 
-app.use("/carts", cartRoutes);
+// app.use("/carts", cartRoutes);
 app.use("/products", productRoutes);
-app.use("/users", userRoutes);
+// app.use("/users", userRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
