@@ -1,12 +1,14 @@
-import express from 'express';
+
+import express from "express";
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send("Here is the list of all orders.");
+    res.send("Here is the list of books!");
 });
 
 router.post('/', (req, res) => {
-    res.send("A new order has been placed.");
+    res.send("Book has been added!");
 });
 
 export default router;
