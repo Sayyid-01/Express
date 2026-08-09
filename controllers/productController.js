@@ -1,24 +1,23 @@
 import {
-  getAllProducts as getAllProductsService,
   getProductById as getProductByIdService,
   addProduct,
 } from "../services/productService.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const getAllProducts = (req, res) => {
-  const result = getAllProductsService();
-  res.send(result);
+  res.sendFile(path.join(__dirname, "../view/product.html"));
 };
 
 const getProductById = (req, res) => {
-  const productId = req.params.id;
-
-  const result = getProductByIdService(productId);
-  res.send(result);
+  res.send(getProductByIdService(req.params.id));
 };
 
 const createProduct = (req, res) => {
-  const result = addProduct(req.body);
-  res.send(result);
+  res.send(addProduct(req.body));
 };
 
 export { getAllProducts, getProductById, createProduct };
