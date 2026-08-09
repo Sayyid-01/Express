@@ -7,6 +7,7 @@ const onSubmitHandler = async (event) => {
     
     axios.post("http://localhost:3000/products",obj).then((response) => {
         console.log(response.data);
+        
     }).catch((error) => {
         console.error(error);
     });
