@@ -16,7 +16,8 @@ const getProductById = (req, res) => {
   res.send(getProductByIdService(req.params.id));
 };
 const createProduct = (req, res) => {
-  res.send(addProduct(req.body));
+  const data = req.body;
+  res.json({Value: data.productName});
 };
 
 export { getAllProducts, getProductById, createProduct };
