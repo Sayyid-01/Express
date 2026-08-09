@@ -15,7 +15,6 @@ const getAllProducts = (req, res) => {
 const getProductById = (req, res) => {
   res.send(getProductByIdService(req.params.id));
 };
-
 const createProduct = (req, res) => {
   res.send(addProduct(req.body));
 };
